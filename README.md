@@ -1,2 +1,0 @@
-# Gears
-Created with CodeSandbox
