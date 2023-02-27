@@ -15,7 +15,6 @@ const category = [
 
 export const TentDatas: FC<categoryNameType> = (props) => {
   const { categoryValue } = props;
-  console.log(categoryValue);
   const [subCategoryValue, setSubCategoryValue] = useState("ドームテント"); // valueをstateで管理
   if (categoryValue === "テント") {
     return (

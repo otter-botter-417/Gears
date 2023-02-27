@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Grid, IconButton, Popover, Tooltip } from "@mui/material";
+import { IconButton, Popover, Tooltip } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 import {
   TwitterIcon,

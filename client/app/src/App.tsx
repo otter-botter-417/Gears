@@ -4,21 +4,20 @@ import {
   responsiveFontSizes,
   ThemeProvider,
 } from "@mui/material/styles";
-import { Typography } from "@mui/material";
 import ItemAppendPage from "./components/pages/ItemAppendPage";
+import Header from "./components/pages/Header";
+
 declare module "@mui/material/styles" {
   interface TypographyVariants {
     poster: React.CSSProperties;
     ItemDataText: React.CSSProperties;
   }
-
   // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
     poster?: React.CSSProperties;
     ItemDataText?: React.CSSProperties;
   }
 }
-
 // Update the Typography's variant prop options
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
@@ -26,27 +25,6 @@ declare module "@mui/material/Typography" {
     ItemDataText: true;
   }
 }
-
-const props = {
-  itemName: "HOZ-ST",
-  brandName: "ogawa",
-  price: 55000,
-  openSize: {
-    wide: 255,
-    depth: 245,
-    high: 120,
-  },
-  storageSize: {
-    wide: 52,
-    depth: 20,
-    high: 18,
-  },
-  weight: 3.34,
-  capacity: 2,
-  innerTent: "付属",
-  grandSheet: "なし",
-  accessories: ["張り綱1.5m4本", "アルミピン12本"],
-};
 
 export default function App() {
   let theme = createTheme({
@@ -77,7 +55,21 @@ export default function App() {
       },
     },
     typography: {
+      fontFamily: "Zen Old Mincho",
+
       poster: {
+        color: "#4a4343",
+      },
+      h1: {
+        color: "#4a4343",
+      },
+      h2: {
+        color: "#4a4343",
+      },
+      h3: {
+        color: "#4a4343",
+      },
+      h4: {
         color: "#4a4343",
       },
       h5: {
@@ -94,12 +86,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Typography
-        variant="ItemDataText"
-        fontFamily="Zen Old Mincho"
-      ></Typography>
-      <ItemAppendPage />
-      <ItemPage tentAbility={props} />
+      <Header />
+      {/* <ItemAppendPage /> */}
+      <ItemPage />
     </ThemeProvider>
   );
 }
