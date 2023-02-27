@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { ItemDataText } from "../../text/ItemDataText";
+import { ItemDataText } from "../text/ItemDataText";
+import { ItemDetailText } from "../text/ItemDetailText";
 
 type innerTentType = {
   innerTent: string;
@@ -10,7 +11,7 @@ export const InnerTent: FC<innerTentType> = (props) => {
   return (
     <div>
       <ItemDataText text={"インナーテント"} />
-      <p>{innerTent}</p>
+      <ItemDetailText text={`${innerTent}`} />
     </div>
   );
 };

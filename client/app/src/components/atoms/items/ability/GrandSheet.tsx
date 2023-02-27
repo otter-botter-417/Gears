@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { ItemDataText } from "../../text/ItemDataText";
+import { ItemDataText } from "../text/ItemDataText";
+import { ItemDetailText } from "../text/ItemDetailText";
 
 type grandSheetType = {
   grandSheet: string;
@@ -10,7 +11,7 @@ export const GrandSheet: FC<grandSheetType> = (props) => {
   return (
     <div>
       <ItemDataText text={"グランドシート"} />
-      <p>{grandSheet}</p>
+      <ItemDetailText text={`${grandSheet}`} />
     </div>
   );
 };

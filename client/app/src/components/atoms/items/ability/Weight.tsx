@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { ItemDataText } from "../../text/ItemDataText";
+import { ItemDataText } from "../text/ItemDataText";
+import { ItemDetailText } from "../text/ItemDetailText";
 
 type WeightType = {
   weight: number;
@@ -10,7 +11,7 @@ export const Weight: FC<WeightType> = (props) => {
   return (
     <div>
       <ItemDataText text={"重量"} />
-      <p>{weight}kg</p>
+      <ItemDetailText text={`${weight}kg`} />
     </div>
   );
 };

@@ -5,13 +5,11 @@ type itemNameType = {
   text: string;
 };
 
-export const ItemDetailText: FC<itemNameType> = (props) => {
+export const ItemDataText: FC<itemNameType> = (props) => {
   const { text } = props;
   return (
     <Box>
-      <Typography padding={"5px"} fontSize={15}>
-        {text}
-      </Typography>
+      <Typography variant="h5">{text}</Typography>
     </Box>
   );
 };

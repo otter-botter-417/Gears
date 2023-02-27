@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { ItemDataText } from "../../text/ItemDataText";
+import { ItemDataText } from "../text/ItemDataText";
+import { ItemDetailListText } from "../text/ItemDetailListText";
 
 type accessoriesType = {
   accessories?: Array<string>;
@@ -14,7 +15,7 @@ export const Accessories: FC<accessoriesType> = (props) => {
       <div>
         <ItemDataText text={"その他付属品"} />
         {accessories.map((accessoriesArray) => (
-          <p>{accessoriesArray}</p>
+          <ItemDetailListText text={`${accessoriesArray}`} />
         ))}
       </div>
     );

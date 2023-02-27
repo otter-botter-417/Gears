@@ -9,11 +9,25 @@ import { InnerTent } from "../../atoms/items/ability/InnerTent";
 import { GrandSheet } from "../../atoms/items/ability/GrandSheet";
 import { Accessories } from "../../atoms/items/ability/Accessories";
 import { tentAbilityType } from "../../types/tentAbilityType";
+import { Box } from "@mui/material";
+import { HeartIcon } from "../../atoms/button/HeartIconButton";
+import { ShareIconButton } from "../../atoms/button/ShareIconButton";
 
 export const TentAbilitys: FC<tentAbilityType> = (props) => {
   const { tentAbility } = props;
+
   return (
-    <div>
+    <Box>
+      {/* いいねアイコン */}
+      <HeartIcon />
+      <ShareIconButton
+        url={
+          "https://zenn.dev/ogakuzuko/articles/react-typescript-for-beginner"
+        }
+        title={tentAbility.itemName}
+      />
+
+      {/* テント各種データ */}
       <Price price={tentAbility.price} />
       <OpenSize size={tentAbility.openSize} />
       <StorageSize size={tentAbility.storageSize} />
@@ -22,6 +36,6 @@ export const TentAbilitys: FC<tentAbilityType> = (props) => {
       <InnerTent innerTent={tentAbility.innerTent} />
       <GrandSheet grandSheet={tentAbility.grandSheet} />
       <Accessories accessories={tentAbility.accessories} />
-    </div>
+    </Box>
   );
 };

@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { ItemDataText } from "../../text/ItemDataText";
-import { ItemDetailText } from "../../text/ItemDetailText";
+import { ItemDataText } from "../text/ItemDataText";
+import { ItemDetailText } from "../text/ItemDetailText";
 
 type capacityType = {
   capacity: number;
