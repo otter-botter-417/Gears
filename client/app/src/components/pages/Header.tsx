@@ -1,18 +1,23 @@
-import { Typography } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import React from "react";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 
-const Header = () => {
+export const Header = () => {
   return (
-    <Container maxWidth="xl">
-      <Box sx={{ bgcolor: "#DCD6D6" }}>
-        <Typography variant="h2" align="center">
-          Gears
-        </Typography>
-      </Box>
-    </Container>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="fixed" color="transparent">
+        <Toolbar variant="dense">
+          <IconButton edge="start" aria-label="menu" sx={{ mr: 2 }}>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" color="inherit" component="div">
+            Photos
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 };
-
-export default Header;

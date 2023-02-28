@@ -30,4 +30,14 @@ export const themeOptions: ThemeOptions = {
   typography: {
     fontFamily: "Zen Old Mincho",
   },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        colorInherit: {
+          backgroundColor: "#689f38",
+          color: "#fff",
+        },
+      },
+    },
+  },
 };
