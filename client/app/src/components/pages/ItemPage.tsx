@@ -35,7 +35,7 @@ export const ItemPage = () => {
     return (
       <Box
         sx={{
-          padding: 5,
+          padding: 10,
           display: "flex",
           justifyContent: "space-evenly",
         }}

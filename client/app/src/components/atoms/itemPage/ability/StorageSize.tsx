@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { sizeType } from "../../../types/sizeType";
+import { sizeType } from "../../../../typs/sizeType";
 import { ItemDataText } from "../text/ItemDataText";
 import { ItemDetailText } from "../text/ItemDetailText";
 
@@ -8,7 +8,7 @@ export const StorageSize: FC<sizeType> = (props) => {
   return (
     <div>
       <ItemDataText text={"収納サイズ (幅×奥行き×高さ)"} />
-      <ItemDetailText text={`${size.wide}x${size.depth}x${size.high}cm`} />
+      <ItemDetailText text={`${size.wide} × ${size.depth} × ${size.high} cm`} />
     </div>
   );
 };

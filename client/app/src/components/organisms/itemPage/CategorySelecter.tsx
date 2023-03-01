@@ -1,4 +1,4 @@
-import { itemDatas } from "../../types/itemDatas";
+import { itemDatas } from "../../../typs/itemDatas";
 import { FC } from "react";
 import { TentAbilitys } from "../../molecules/itemPage/abilitys/TentAbilitys";
 

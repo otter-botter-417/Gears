@@ -1,5 +1,6 @@
 import { MenuItem, TextField } from "@mui/material";
 import { FC, useState } from "react";
+import { TextFieldStyles } from "../../../../styles/ItemAppendPage/TextFieldStyles";
 
 type categoryNameType = {
   categoryValue: string;
@@ -26,6 +27,7 @@ export const TentDatas: FC<categoryNameType> = (props) => {
           value={subCategoryValue}
           defaultValue="テント"
           helperText="カテゴリーを選択"
+          sx={TextFieldStyles.input}
           onChange={(event) => setSubCategoryValue(event.target.value)}
         >
           {category.map((option) => (
@@ -35,22 +37,48 @@ export const TentDatas: FC<categoryNameType> = (props) => {
           ))}
         </TextField>
         <TextField
-          required
           id="openSize"
           label="サイズ (幅×奥×高) cm"
+          required
           defaultValue={"××"}
+          sx={TextFieldStyles.input}
         />
         <TextField
-          required
           id="storageSize"
           label="収納サイズ (幅×奥×高) cm"
+          required
           defaultValue={"××"}
+          sx={TextFieldStyles.input}
         />
-        <TextField required id="weight" label="重量 kg" />
-        <TextField required id="capacity" label="収容人数" />
-        <TextField required id="innerTent" label="インナーテント" />
-        <TextField required id="grandSheet" label="グランドシート" />
-        <TextField id="accessories" label="その他付属品" />
+        <TextField
+          id="weight"
+          label="重量 kg"
+          required
+          sx={TextFieldStyles.input}
+        />
+        <TextField
+          id="capacity"
+          label="収容人数"
+          required
+          sx={TextFieldStyles.input}
+        />
+        <TextField
+          id="innerTent"
+          label="インナーテント"
+          required
+          sx={TextFieldStyles.input}
+        />
+        <TextField
+          id="grandSheet"
+          label="グランドシート"
+          required
+          sx={TextFieldStyles.input}
+        />
+        <TextField
+          id="accessories"
+          label="その他付属品"
+          sx={TextFieldStyles.input}
+        />
       </>
     );
   } else {

@@ -10,7 +10,7 @@ import { GrandSheet } from "../../../atoms/itemPage/ability/GrandSheet";
 import { Accessories } from "../../../atoms/itemPage/ability/Accessories";
 import { Box } from "@mui/material";
 import { Buttons } from "../Buttons";
-import { itemDatas } from "../../../types/itemDatas";
+import { itemDatas } from "../../../../typs/itemDatas";
 
 export const TentAbilitys: FC<itemDatas> = (props) => {
   const { itemDatas } = props;

@@ -1,7 +1,10 @@
+import { LoadingButton } from "@mui/lab";
 import { MenuItem, TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
-import ItemTags from "../atoms/itemAppend/itemDatas/ItemTags";
+import { Tags } from "../atoms/itemAppend/Tags";
+import { FormEvent } from "react";
+import { TextFieldStyles } from "../../styles/ItemAppendPage/TextFieldStyles";
 import { TentDatas } from "../atoms/itemAppend/itemDatas/TentDatas";
 
 const ItemAppendPage = () => {
@@ -27,26 +30,79 @@ const ItemAppendPage = () => {
     "snow peak (スノーピーク)",
     "WIWO",
     "BUNDOK (バンドック)",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
   ];
-  const [categoryValue, setCategoryValue] = useState("テント"); // valueをstateで管理
+  const itemTagList = [
+    "軽量",
+    "簡単設営",
+    "韓国",
+    "コンパクト",
+    "無骨",
+    "煙突穴",
+  ];
+  const colorTagList = [
+    "オリーブ",
+    "レッド",
+    "ブラック",
+    "ホワイト",
+    "ベージュ",
+    "ブラウン",
+  ];
+  const [categoryValue, setCategoryValue] = useState(""); // valueをstateで管理
+  const [brandValue, setBrandValue] = useState(""); // valueをstateで管理
+  const [itemTags, setItemTags] = useState<string[]>([]);
+  const [colorTags, setColorTags] = useState<string[]>([]);
 
-  console.log(categoryValue);
+  // const itemDatasRegisterApi = {};
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // 入力欄の文字列を取得
+    const itemNames = e.currentTarget.itemName.value;
+    const amazonUrl = e.currentTarget.amazonUrl.value;
+    const asin = e.currentTarget.asin.value;
+    const price = e.currentTarget.price.value;
+
+    console.log(itemNames);
+    console.log(amazonUrl);
+    console.log(asin);
+    console.log(categoryValue);
+    console.log(brandValue);
+    console.log(price);
+    console.log(itemTags);
+    console.log(colorTags);
+  };
 
   return (
     <>
-      <Box>
-        <TextField required id="itemName" label="商品名" defaultValue="" />
-        <TextField required id="amazonUrl" label="AmazonURL" defaultValue="" />
-        <TextField required id="ASIN" label="ASIN" defaultValue="" />
+      <Box
+        component="form"
+        onSubmit={handleSubmit}
+        display={"flex"}
+        flexDirection="column"
+        alignItems="center"
+        minHeight="100vh"
+      >
+        <TextField
+          id="itemName"
+          required
+          label="商品名"
+          defaultValue=""
+          sx={TextFieldStyles.input}
+        />
+        <TextField
+          id="amazonUrl"
+          required
+          label="AmazonURL"
+          defaultValue=""
+          sx={TextFieldStyles.input}
+        />
+        <TextField
+          id="asin"
+          required
+          label="ASIN"
+          defaultValue=""
+          sx={TextFieldStyles.input}
+        />
         <TextField
           id="Category"
           select
@@ -54,6 +110,7 @@ const ItemAppendPage = () => {
           value={categoryValue}
           defaultValue="テント"
           onChange={(event) => setCategoryValue(event.target.value)}
+          sx={TextFieldStyles.input}
         >
           {category.map((option) => (
             <MenuItem key={option} value={option}>
@@ -65,7 +122,10 @@ const ItemAppendPage = () => {
           id="brand"
           select
           label="メーカーを選択"
+          value={brandValue}
           defaultValue="ogawa (オガワ)"
+          onChange={(event) => setBrandValue(event.target.value)}
+          sx={TextFieldStyles.input}
         >
           {brand.map((option) => (
             <MenuItem key={option} value={option}>
@@ -73,9 +133,34 @@ const ItemAppendPage = () => {
             </MenuItem>
           ))}
         </TextField>
-        <TextField required id="price" label="定価" />
+        <TextField
+          id="price"
+          required
+          label="定価"
+          sx={TextFieldStyles.input}
+        />
+        <Tags
+          text={"タグ"}
+          tagName={itemTags}
+          setTagName={setItemTags}
+          items={itemTagList}
+        />
+        <Tags
+          text={"カラー"}
+          tagName={colorTags}
+          setTagName={setColorTags}
+          items={colorTagList}
+        />
         <TentDatas categoryValue={categoryValue} />
-        <ItemTags />
+
+        <LoadingButton
+          sx={TextFieldStyles.input}
+          fullWidth
+          type="submit"
+          variant="outlined"
+        >
+          データ送信
+        </LoadingButton>
       </Box>
     </>
   );

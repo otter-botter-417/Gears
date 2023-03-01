@@ -27,9 +27,11 @@ export const themeOptions: ThemeOptions = {
       contrastText: "#ff1744",
     },
   },
+
   typography: {
-    fontFamily: "Zen Old Mincho",
+    fontFamily: " Zen Old Mincho",
   },
+
   components: {
     MuiAppBar: {
       styleOverrides: {
