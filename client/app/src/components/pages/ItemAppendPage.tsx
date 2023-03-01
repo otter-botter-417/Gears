@@ -6,47 +6,12 @@ import { Tags } from "../atoms/itemAppend/Tags";
 import { FormEvent } from "react";
 import { TextFieldStyles } from "../../styles/ItemAppendPage/TextFieldStyles";
 import { TentDatas } from "../atoms/itemAppend/itemDatas/TentDatas";
+import { categoryNameList } from "../atoms/itemAppend/SelectNames/CategoryNameList";
+import { brandNameList } from "../atoms/itemAppend/SelectNames/BrandNameList";
+import { colorTagList } from "../atoms/itemAppend/SelectNames/ColorTagList";
+import { itemTagList } from "../atoms/itemAppend/SelectNames/ItemTagList";
 
 const ItemAppendPage = () => {
-  const category = [
-    "テント",
-    "タープ",
-    "チェア",
-    "テーブル",
-    "焚き火台",
-    "ランタン、照明",
-    "寝袋",
-    "マット",
-    "コット",
-    "調理器具",
-    "テントアクセサリー",
-    "暖房器具",
-    "クーラーボックス",
-    "収納",
-  ];
-  const brand = [
-    "ogawa (オガワ)",
-    "Coleman (コールマン)",
-    "snow peak (スノーピーク)",
-    "WIWO",
-    "BUNDOK (バンドック)",
-  ];
-  const itemTagList = [
-    "軽量",
-    "簡単設営",
-    "韓国",
-    "コンパクト",
-    "無骨",
-    "煙突穴",
-  ];
-  const colorTagList = [
-    "オリーブ",
-    "レッド",
-    "ブラック",
-    "ホワイト",
-    "ベージュ",
-    "ブラウン",
-  ];
   const [categoryValue, setCategoryValue] = useState(""); // valueをstateで管理
   const [brandValue, setBrandValue] = useState(""); // valueをstateで管理
   const [itemTags, setItemTags] = useState<string[]>([]);
@@ -112,7 +77,7 @@ const ItemAppendPage = () => {
           onChange={(event) => setCategoryValue(event.target.value)}
           sx={TextFieldStyles.input}
         >
-          {category.map((option) => (
+          {categoryNameList.map((option) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>
@@ -127,7 +92,7 @@ const ItemAppendPage = () => {
           onChange={(event) => setBrandValue(event.target.value)}
           sx={TextFieldStyles.input}
         >
-          {brand.map((option) => (
+          {brandNameList.map((option) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>

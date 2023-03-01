@@ -5,7 +5,7 @@ import {
 } from "@mui/material/styles";
 import { Box, CssBaseline } from "@mui/material";
 import { Header } from "./components/pages/Header";
-// import { ItemPage } from "./components/pages/ItemPage";
+import { ItemPage } from "./components/pages/ItemPage";
 import { themeOptions } from "./styles/themes/themeOptions";
 import ItemAppendPage from "./components/pages/ItemAppendPage";
 
@@ -17,7 +17,7 @@ export default function App() {
       <Box sx={{ pt: "64px" }}>
         <CssBaseline />
         <Header />
-        {/* <ItemPage /> */}
+        <ItemPage />
         <ItemAppendPage />
       </Box>
     </ThemeProvider>
